@@ -57,6 +57,7 @@ class ProdukController extends Controller
         public function update(Request $request, $id)
         {
             $products = Produk::findOrFail($id);
+
         $validate = Validator::make($request->all(),[
             'product_name' => 'required|max:50',
             'product_type' => 'required|in:snack,drink,fruit,drug,groceries,make-up,cigarette',
